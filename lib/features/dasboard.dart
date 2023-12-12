@@ -188,12 +188,105 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
             ),
-            Text('Our Services',style: TextStyles.style64w700M(
-              AppColor.mainBlue,
-            ),),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 100.0),
+              child: Text(
+                'Our Services',
+                style: TextStyles.style64w700M(
+                  AppColor.mainBlue,
+                ),
+              ),
+            ),
+            _ServiceItem(
+              title:
+                  'Mobile application development services for IOS and Android platforms using flutter',
+              iconPatch: Assets.svg.illustration1,
+            ),
+            _ServiceItem(
+              title: 'Software Testing  & QA',
+              iconPatch: Assets.svg.illustration2,
+              isLeft: false,
+            ),
+            _ServiceItem(
+              title: 'Web App development services',
+              iconPatch: Assets.svg.illustration3,
+            ),
+            _ServiceItem(
+              title: 'UI/UX Design',
+              iconPatch: Assets.svg.illustration4,
+              isLeft: false,
+            ),
+            SizedBox(height: 70),
+            Divider(),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 100.0, horizontal: 40),
+              child: Row(
+                children: [
+                  Text(
+                    ' © 2023 THE GLOBAL IT INNOVATION',
+                    style: TextStyles.style22w700M(
+                      AppColor.primaryBlack,
+                    ),
+                  ),
+                  Expanded(child: SizedBox()),
+                  Text(
+                    'Privacy Policy',
+                    style: TextStyles.style22w700M(
+                      AppColor.primaryBlack,
+                    ),
+                  ),
+                  SizedBox(width: 70),
+                  Text(
+                    'Terms of use',
+                    style: TextStyles.style22w700M(
+                      AppColor.primaryBlack,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ServiceItem extends StatelessWidget {
+  const _ServiceItem({
+    required this.title,
+    required this.iconPatch,
+    this.isLeft = true,
+  });
+  final String title;
+  final String iconPatch;
+  final bool isLeft;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+          EdgeInsets.only(left: isLeft ? 40.0 : 60, right: isLeft ? 60 : 40),
+      child: isLeft
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _TextCard(
+                  text: title,
+                ),
+                SvgPicture.asset(iconPatch),
+              ],
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset(iconPatch),
+                _TextCard(
+                  text: title,
+                ),
+              ],
+            ),
     );
   }
 }
@@ -227,6 +320,34 @@ class _IconCard extends StatelessWidget {
                 style: TextStyles.style22w400MItalic(AppColor.mainBlue),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _TextCard extends StatelessWidget {
+  const _TextCard({required this.text});
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 20,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: SizedBox(
+        width: 660,
+        height: 240,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 54.0),
+            child: Text(
+              text,
+              style: TextStyles.style32w700M(AppColor.mainGray),
+            ),
           ),
         ),
       ),

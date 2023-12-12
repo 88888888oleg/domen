@@ -19,6 +19,14 @@ class TextStyles {
         color: color,
         height: height,
       );
+  static TextStyle style32w700M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+        color: color,
+        height: height,
+      );
   static TextStyle style23w400M(Color? color, [double? height = 1.357]) =>
       TextStyle(
         fontFamily: FontFamily.merriweather,
