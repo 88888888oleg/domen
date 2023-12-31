@@ -1,68 +1,38 @@
 import 'package:domen/config/app_color.dart';
 import 'package:domen/config/text_styles.dart';
+import 'package:domen/features/about_us/about_us.dart';
+import 'package:domen/features/contact_us/contact_us.dart';
+import 'package:domen/features/privaci_policy.dart';
+import 'package:domen/features/widgets/footer.dart';
+import 'package:domen/features/widgets/main_app_bar.dart';
 import 'package:domen/generated_assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Dashboard extends StatelessWidget {
+
+class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
+
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  @override
+  void reassemble() {
+    Navigator.push(
+      context,
+      AboutUs.route(),
+    );
+    print('reassemble++');
+    super.reassemble();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.ghostWhite,
-      appBar: AppBar(
-        toolbarHeight: 100,
-        backgroundColor: AppColor.primaryWhite,
-        title: Center(
-          child: Row(
-            children: [
-              const SizedBox(width: 40),
-              Image.asset(Assets.png.logo.path, width: 56, height: 56),
-              const SizedBox(width: 8),
-              Text(
-                'THE GLOBAL IT\nINNOVATIONS',
-                textAlign: TextAlign.center,
-                style: TextStyles.style22w400N(AppColor.mainBlue),
-              ),
-              const Expanded(child: SizedBox()),
-              Text(
-                'About Us',
-                style: TextStyles.style22w700M(AppColor.mainBlue),
-              ),
-              const SizedBox(width: 100),
-              Text(
-                'Our Products',
-                style: TextStyles.style22w700M(AppColor.mainBlue),
-              ),
-              const SizedBox(width: 100),
-              Text(
-                'Contact Us',
-                style: TextStyles.style22w700M(AppColor.mainBlue),
-              ),
-              const Expanded(child: SizedBox()),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: AppColor.mainBlue),
-                  borderRadius: BorderRadius.circular(22),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 40,
-                  ),
-                  child: Text(
-                    'Contact Us',
-                    style: TextStyles.style22w700M(
-                      AppColor.mainBlue,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      appBar: const MainAppBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -107,23 +77,35 @@ class Dashboard extends StatelessWidget {
                             ),
                           ),
                           const Expanded(child: SizedBox()),
-                          Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 2,
-                                color: AppColor.mainBlue,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                ContactUs.route(),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 2,
+                                  color: AppColor.mainBlue,
+                                ),
+                                borderRadius: BorderRadius.circular(22),
                               ),
-                              borderRadius: BorderRadius.circular(22),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 15.0,
-                                horizontal: 40,
-                              ),
-                              child: Text(
-                                'Get In Touch',
-                                style: TextStyles.style22w700M(
-                                  AppColor.mainBlue,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 15.0,
+                                  horizontal: 40,
+                                ),
+                                child: Text(
+                                  'Get In Touch',
+                                  style: TextStyles.style22w700M(
+                                    AppColor.mainBlue,
+                                  ),
                                 ),
                               ),
                             ),
@@ -216,36 +198,8 @@ class Dashboard extends StatelessWidget {
               iconPatch: Assets.svg.illustration4,
               isLeft: false,
             ),
-            SizedBox(height: 70),
-            Divider(),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 100.0, horizontal: 40),
-              child: Row(
-                children: [
-                  Text(
-                    ' © 2023 THE GLOBAL IT INNOVATION',
-                    style: TextStyles.style22w700M(
-                      AppColor.primaryBlack,
-                    ),
-                  ),
-                  Expanded(child: SizedBox()),
-                  Text(
-                    'Privacy Policy',
-                    style: TextStyles.style22w700M(
-                      AppColor.primaryBlack,
-                    ),
-                  ),
-                  SizedBox(width: 70),
-                  Text(
-                    'Terms of use',
-                    style: TextStyles.style22w700M(
-                      AppColor.primaryBlack,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const SizedBox(height: 70),
+            const Footer(),
           ],
         ),
       ),
@@ -317,7 +271,7 @@ class _IconCard extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 text,
-                style: TextStyles.style22w400MItalic(AppColor.mainBlue),
+                style: TextStyles.style20w400MItalic(AppColor.mainBlue),
               ),
             ],
           ),

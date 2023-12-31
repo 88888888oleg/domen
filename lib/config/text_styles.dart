@@ -11,6 +11,24 @@ class TextStyles {
         color: color,
         height: height,
       );
+  static TextStyle style12w600M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: color,
+        height: height,
+      );
+  static TextStyle style18w400M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+        color: color,
+        height: height,
+        fontStyle: FontStyle.italic,
+      );
+
   static TextStyle style22w700M(Color? color, [double? height = 1.357]) =>
       TextStyle(
         fontFamily: FontFamily.merriweather,
@@ -23,6 +41,32 @@ class TextStyles {
       TextStyle(
         fontFamily: FontFamily.merriweather,
         fontSize: 32,
+        fontWeight: FontWeight.w700,
+        color: color,
+        height: height,
+      );
+  static TextStyle style36w700M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 36,
+        fontWeight: FontWeight.w700,
+        color: color,
+        height: height,
+      );
+  static TextStyle style36w700MIt(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 36,
+        fontWeight: FontWeight.w700,
+        color: color,
+        height: height,
+        fontStyle: FontStyle.italic,
+      );
+
+  static TextStyle style72w700M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 72,
         fontWeight: FontWeight.w700,
         color: color,
         height: height,
@@ -53,6 +97,25 @@ class TextStyles {
         height: height,
         fontStyle: FontStyle.italic,
       );
+  static TextStyle style20w400MItalic(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: color,
+        height: height,
+        fontStyle: FontStyle.italic,
+      );
+
+  static TextStyle style48w700M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 48,
+        fontWeight: FontWeight.w700,
+        color: color,
+        height: height,
+      );
+
   static TextStyle style64w700M(Color? color, [double? height = 1.357]) =>
       TextStyle(
         fontFamily: FontFamily.merriweather,
@@ -61,4 +124,22 @@ class TextStyles {
         color: color,
         height: height,
       );
+  static TextStyle style54w400M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 54,
+        fontWeight: FontWeight.w400,
+        color: color,
+        height: height,
+      );
+  static TextStyle style44w200M(Color? color, [double? height = 1.357]) =>
+      TextStyle(
+        fontFamily: FontFamily.merriweather,
+        fontSize: 44,
+        fontWeight: FontWeight.w200,
+        color: color,
+        height: height,
+        fontStyle: FontStyle.italic,
+      );
+
 }
