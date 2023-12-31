@@ -12,6 +12,17 @@ import 'package:flutter/widgets.dart';
 class $AssetsPngGen {
   const $AssetsPngGen();
 
+  /// File path: assets/png/city.png
+  AssetGenImage get city => const AssetGenImage('assets/png/city.png');
+
+  /// File path: assets/png/finance_avatar.png
+  AssetGenImage get financeAvatar =>
+      const AssetGenImage('assets/png/finance_avatar.png');
+
+  /// File path: assets/png/flutter_avatar.png
+  AssetGenImage get flutterAvatar =>
+      const AssetGenImage('assets/png/flutter_avatar.png');
+
   /// File path: assets/png/header.png
   AssetGenImage get header => const AssetGenImage('assets/png/header.png');
 
@@ -21,8 +32,24 @@ class $AssetsPngGen {
   /// File path: assets/png/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/png/logo.png');
 
+  /// File path: assets/png/qa_avatar.png
+  AssetGenImage get qaAvatar => const AssetGenImage('assets/png/qa_avatar.png');
+
+  /// File path: assets/png/ui_ux_avatar.png
+  AssetGenImage get uiUxAvatar =>
+      const AssetGenImage('assets/png/ui_ux_avatar.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [header, leftPic, logo];
+  List<AssetGenImage> get values => [
+        city,
+        financeAvatar,
+        flutterAvatar,
+        header,
+        leftPic,
+        logo,
+        qaAvatar,
+        uiUxAvatar
+      ];
 }
 
 class $AssetsSvgGen {
@@ -49,6 +76,12 @@ class $AssetsSvgGen {
   /// File path: assets/svg/card3.svg
   String get card3 => 'assets/svg/card3.svg';
 
+  /// File path: assets/svg/flag-poland.svg
+  String get flagPoland => 'assets/svg/flag-poland.svg';
+
+  /// File path: assets/svg/mail.svg
+  String get mail => 'assets/svg/mail.svg';
+
   /// List of all assets
   List<String> get values => [
         illustration1,
@@ -57,7 +90,9 @@ class $AssetsSvgGen {
         illustration4,
         card1,
         card2,
-        card3
+        card3,
+        flagPoland,
+        mail
       ];
 }
 

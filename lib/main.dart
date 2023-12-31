@@ -1,4 +1,4 @@
-import 'package:domen/features/dasboard.dart';
+import 'package:domen/features/dashboard/dasboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
