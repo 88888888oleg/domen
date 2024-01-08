@@ -1,24 +1,60 @@
+import 'package:domen/config/start_config.dart';
+import 'package:domen/features/about_us/about_us.dart';
+import 'package:domen/features/contact_us/contact_us.dart';
 import 'package:domen/features/dashboard/dasboard.dart';
+import 'package:domen/features/privaci_policy.dart';
+import 'package:domen/features/terms_of_use/terms_of_use.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-void main() {
+Future<void> main() async {
+  await StartConfig.configureApp();
   runApp(const MyApp());
 }
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Dashboard();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'contact_us',
+          builder: (BuildContext context, GoRouterState state) {
+            return const ContactUs();
+          },
+        ),
+        GoRoute(
+          path: 'about_us',
+          builder: (BuildContext context, GoRouterState state) {
+            return const AboutUs();
+          },
+        ),
+        GoRoute(
+          path: 'terms_of_use',
+          builder: (BuildContext context, GoRouterState state) {
+            return const TermsOfUse();
+          },
+        ),
+        GoRoute(
+          path: 'privacy_policy',
+          builder: (BuildContext context, GoRouterState state) {
+            return const PrivacyPolicy();
+          },
+        ),
+      ],
+    ),
+  ],
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1512),
-          child: const MyHomePage(),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: _router,
     );
   }
 }

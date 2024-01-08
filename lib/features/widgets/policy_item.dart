@@ -14,14 +14,14 @@ class PolicyItem extends StatelessWidget {
       text: TextSpan(
         text: title,
         style: TextStyles.style36w700M(
-          AppColor.mainBlue,
+          Palette().linkText(),
           4,
         ),
         children: [
           TextSpan(
             text: content,
             style: TextStyles.style18w400M(
-              AppColor.primaryBlack,
+              Palette().textColor(),
             ),
           ),
         ],

@@ -1,6 +1,5 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 extension StringExtensionString on String {
   String get capitalize {

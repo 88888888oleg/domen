@@ -1,8 +1,7 @@
-import 'package:domen/features/privaci_policy.dart';
-import 'package:domen/features/terms_of_use/terms_of_use.dart';
 import 'package:flutter/material.dart';
 import 'package:domen/config/app_color.dart';
 import 'package:domen/config/text_styles.dart';
+import 'package:go_router/go_router.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key, this.horizontalPaddingNeeds = true});
@@ -27,36 +26,26 @@ class Footer extends StatelessWidget {
               Text(
                 ' © ${DateTime.now().year} THE GLOBAL IT INNOVATION',
                 style: TextStyles.style22w700M(
-                  AppColor.primaryBlack,
+                  Palette().textColor(),
                 ),
               ),
               const Expanded(child: SizedBox()),
               InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PrivacyPolicy.route(),
-                  );
-                },
+                onTap: () => context.go('/privacy_policy'),
                 child: Text(
                   'Privacy Policy',
                   style: TextStyles.style22w700M(
-                    AppColor.primaryBlack,
+                    Palette().textColor(),
                   ),
                 ),
               ),
               const SizedBox(width: 70),
               InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    TermsOfUse.route(),
-                  );
-                },
+                onTap: () => context.go('/terms_of_use'),
                 child: Text(
                   'Terms of use',
                   style: TextStyles.style22w700M(
-                    AppColor.primaryBlack,
+                    Palette().textColor(),
                   ),
                 ),
               ),
